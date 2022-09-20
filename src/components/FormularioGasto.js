@@ -1,23 +1,23 @@
-import React, { useState, useEffect } from 'react'
-import { Text, SafeAreaView, View, TextInput, StyleSheet, Pressable} from 'react-native'
-import { Picker } from '@react-native-picker/picker'
+import React, { useState, useEffect } from 'react'
+import { Text, SafeAreaView, View, TextInput, StyleSheet, Pressable } from 'react-native'
+import { Picker } from '@react-native-picker/picker'
 import globalStyles from '../styles'
 
 const FormularioGasto = ({
-    setModal, 
-    handleGasto, 
-    gasto, 
-    setGasto, 
+    setModal,
+    handleGasto,
+    gasto,
+    setGasto,
     eliminarGasto
 }) => {
-    const [ nombre, setNombre] = useState('')
-    const [ cantidad, setCantidad] = useState('')
-    const [ categoria, setCategoria] = useState('')
-    const [ id, setId ] = useState('')
-    const [ fecha, setFecha ] = useState('')
+    const [nombre, setNombre] = useState('')
+    const [cantidad, setCantidad] = useState('')
+    const [categoria, setCategoria] = useState('')
+    const [id, setId] = useState('')
+    const [fecha, setFecha] = useState('')
 
     useEffect(() => {
-        if(gasto?.nombre) {
+        if (gasto?.nombre) {
             setNombre(gasto.nombre)
             setCantidad(gasto.cantidad)
             setCategoria(gasto.categoria)
@@ -29,7 +29,7 @@ const FormularioGasto = ({
     return (
         <SafeAreaView style={styles.contenedor}>
             <View style={styles.contenedorBotones}>
-                <Pressable 
+                <Pressable
                     onLongPress={() => {
                         setModal(false)
                         setGasto({})
@@ -37,22 +37,22 @@ const FormularioGasto = ({
                     style={[styles.btn, styles.btnCancelar]}
                 >
                     <Text style={styles.btnTexto}>Cancelar</Text>
-                </Pressable> 
+                </Pressable>
 
-                { !!id && (
-                    <Pressable 
+                {!!id && (
+                    <Pressable
                         style={[styles.btn, styles.btnEliminar]}
                         onLongPress={() => eliminarGasto(id)}
                     >
                         <Text style={styles.btnTexto}>Eliminar</Text>
-                    </Pressable> 
-                ) }
+                    </Pressable>
+                )}
 
-            </View>    
+            </View>
 
             <View style={styles.formulario}>
-                <Text style={styles.titulo}> 
-                    {gasto?.nombre ? 'Editar Gasto' : 'Nuevo Gasto'} 
+                <Text style={styles.titulo}>
+                    {gasto?.nombre ? 'Editar Gasto' : 'Nuevo Gasto'}
                 </Text>
 
                 <View style={styles.campo}>
@@ -95,12 +95,12 @@ const FormularioGasto = ({
                     </Picker>
                 </View>
 
-                <Pressable 
+                <Pressable
                     style={styles.submitBtn}
                     onPress={() => handleGasto({ nombre, cantidad, categoria, id, fecha })}
                 >
                     <Text style={styles.submitBtnTexto}>
-                        {gasto?.nombre ? 'Guardar Cambios Gasto' : 'Agregar Gasto'} 
+                        {gasto?.nombre ? 'Guardar Cambios Gasto' : 'Agregar Gasto'}
                     </Text>
                 </Pressable>
             </View>
@@ -110,7 +110,7 @@ const FormularioGasto = ({
 
 const styles = StyleSheet.create({
     contenedor: {
-        backgroundColor: '#1E40AF', 
+        backgroundColor: '#1C215D',
         flex: 1
     },
     contenedorBotones: {
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     btnCancelar: {
-        backgroundColor: '#DB2777', 
+        backgroundColor: '#DB2777',
     },
     btnEliminar: {
         backgroundColor: 'red'
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     submitBtn: {
-        backgroundColor: '#3B82F6',
+        backgroundColor: '#2DB572',
         padding: 10,
         marginTop: 20
     },

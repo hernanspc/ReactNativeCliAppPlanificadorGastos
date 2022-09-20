@@ -56,7 +56,7 @@ const ControlPresupuesto = ({ presupuesto, gastos, resetearApp }) => {
                     title='Gastado'
                     inActiveStrokeColor='#F5F5F5'
                     inActiveStrokeWidth={20}
-                    activeStrokeColor='#3b82f6'
+                    activeStrokeColor='#2DB572'
                     activeStrokeWidth={20}
                     titleStyle={{ fontWeight: 'bold', fontSize: 20 }}
                     titleColor='#64748B'
@@ -75,17 +75,6 @@ const ControlPresupuesto = ({ presupuesto, gastos, resetearApp }) => {
                         count: 50,
                         width: 4,
                     }}
-                /> */}
-                {/* <CircularProgress
-                    value={100}
-                    radius={120}
-                    progressValueColor={'#fff'}
-                    duration={10000}
-                    strokeColorConfig={[
-                        { color: 'red', value: 0 },
-                        { color: 'skyblue', value: 50 },
-                        { color: 'yellowgreen', value: 100 },
-                    ]}
                 /> */}
             </View>
 
@@ -124,7 +113,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     boton: {
-        backgroundColor: '#DB2777',
+        backgroundColor: '#F95663',
         padding: 10,
         marginBottom: 40,
         borderRadius: 5

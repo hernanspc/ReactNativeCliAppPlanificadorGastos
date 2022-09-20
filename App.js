@@ -233,11 +233,11 @@ const App = () => {
 
 const styles = StyleSheet.create({
   contenedor: {
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#ADB7C3',
     flex: 1
   },
   header: {
-    backgroundColor: '#3B82F6',
+    backgroundColor: '#1C215D',
     minHeight: 400
   },
   pressable: {

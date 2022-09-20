@@ -5842,7 +5842,7 @@ react-native-animatable@^1.3.3:
   dependencies:
     prop-types "^15.7.2"
 
-react-native-circular-progress-indicator@^4.3.0:
+react-native-circular-progress-indicator@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/react-native-circular-progress-indicator/-/react-native-circular-progress-indicator-4.4.0.tgz#048df184ed5b4d3d2305e5f8e13b6f29608f5707"
   integrity sha512-+AEHzUeiIZ1pGNJ6jpCz/zo6NkqWm6zz4XygX7eN4bsalDL6VJctZArK6FxcuOStiEWR5edF5dGr92asjzVBSQ==

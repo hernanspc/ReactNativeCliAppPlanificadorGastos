@@ -1,8 +1,18 @@
 export const formatearCantidad = cantidad => {
-    return Number(cantidad).toLocaleString('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    })
+    "worklet";
+    if (cantidad === "") {
+        const formattedValue = `$${cantidad.toLocaleString(
+            // const formattedValue = `$${latestCurrentPrice.value.toLocaleString(
+            "en-US",
+            { currency: "USD" }
+        )}`;
+        return formattedValue;
+    }
+
+    const formattedValue = `${parseFloat(cantidad)
+        .toFixed(2)
+        .replace(/\d(?=(\d{3})+\.)/g, "$&,")}`;
+    return formattedValue;
 }
 
 export const formatearFecha = fecha => {
