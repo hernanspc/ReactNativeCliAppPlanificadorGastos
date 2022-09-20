@@ -51,11 +51,6 @@ const ControlPresupuesto = ({ presupuesto, gastos, resetearApp }) => {
                 <CircularProgress
                     value={porcentaje}
                     duration={1000}
-                    // strokeColorConfig={[
-                    //     { color: 'red', value: 0 },
-                    //     { color: 'skyblue', value: 50 },
-                    //     { color: 'yellowgreen', value: 100 },
-                    // ]}
                     radius={150}
                     valueSuffix={'%'}
                     title='Gastado'
@@ -66,6 +61,32 @@ const ControlPresupuesto = ({ presupuesto, gastos, resetearApp }) => {
                     titleStyle={{ fontWeight: 'bold', fontSize: 20 }}
                     titleColor='#64748B'
                 />
+                {/* <CircularProgress
+                    value={porcentaje}
+                    radius={120}
+                    inActiveStrokeOpacity={0.5}
+                    activeStrokeWidth={15}
+                    inActiveStrokeWidth={20}
+                    progressValueStyle={{ fontWeight: '100', color: 'white' }}
+                    activeStrokeSecondaryColor="yellow"
+                    inActiveStrokeColor="black"
+                    duration={5000}
+                    dashedStrokeConfig={{
+                        count: 50,
+                        width: 4,
+                    }}
+                /> */}
+                {/* <CircularProgress
+                    value={100}
+                    radius={120}
+                    progressValueColor={'#fff'}
+                    duration={10000}
+                    strokeColorConfig={[
+                        { color: 'red', value: 0 },
+                        { color: 'skyblue', value: 50 },
+                        { color: 'yellowgreen', value: 100 },
+                    ]}
+                /> */}
             </View>
 
             <View style={styles.contenedorTexto}>
