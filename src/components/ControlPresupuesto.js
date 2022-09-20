@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import { Text, View, StyleSheet, Pressable } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { Text, View, StyleSheet, Pressable } from 'react-native'
 import globalStyles from '../styles'
-import { formatearCantidad } from '../helpers'
+import { formatearCantidad } from '../helpers'
 import CircularProgress from 'react-native-circular-progress-indicator'
+import Donut from './Donut'
 
-const ControlPresupuesto = ({presupuesto, gastos, resetearApp}) => {
+const ControlPresupuesto = ({ presupuesto, gastos, resetearApp }) => {
     const [disponible, setDisponible] = useState(0)
     const [gastado, setGastado] = useState(0)
-    const [ porcentaje, setPorcentaje ] = useState(0)
+    const [porcentaje, setPorcentaje] = useState(0)
 
     useEffect(() => {
-        const totalGastado = gastos.reduce( (total, gasto) => Number(gasto.cantidad) + total, 0 )
+        const totalGastado = gastos.reduce((total, gasto) => Number(gasto.cantidad) + total, 0)
 
         const totalDisponible = presupuesto - totalGastado
 
@@ -18,7 +19,7 @@ const ControlPresupuesto = ({presupuesto, gastos, resetearApp}) => {
             ((presupuesto - totalDisponible) / presupuesto) * 100
         )
 
-      
+
         setTimeout(() => {
             setPorcentaje(nuevoPorcentaje)
         }, 1000);
@@ -26,12 +27,35 @@ const ControlPresupuesto = ({presupuesto, gastos, resetearApp}) => {
         setDisponible(totalDisponible)
     }, [gastos])
 
+    const data = [{
+        percentage: 8,
+        color: 'tomato',
+        max: 10
+    }, {
+        percentage: 14,
+        color: 'skyblue',
+        max: 20
+    }, {
+        percentage: 92,
+        color: 'gold',
+        max: 100
+    }, {
+        percentage: 240,
+        color: '#222',
+        max: 500
+    }]
+
     return (
         <View style={styles.contenedor}>
             <View style={styles.centrarGrafica}>
                 <CircularProgress
-                    value={ porcentaje }
+                    value={porcentaje}
                     duration={1000}
+                    // strokeColorConfig={[
+                    //     { color: 'red', value: 0 },
+                    //     { color: 'skyblue', value: 50 },
+                    //     { color: 'yellowgreen', value: 100 },
+                    // ]}
                     radius={150}
                     valueSuffix={'%'}
                     title='Gastado'
@@ -39,7 +63,7 @@ const ControlPresupuesto = ({presupuesto, gastos, resetearApp}) => {
                     inActiveStrokeWidth={20}
                     activeStrokeColor='#3b82f6'
                     activeStrokeWidth={20}
-                    titleStyle={{ fontWeight: 'bold', fontSize: 20}}
+                    titleStyle={{ fontWeight: 'bold', fontSize: 20 }}
                     titleColor='#64748B'
                 />
             </View>
@@ -77,7 +101,7 @@ const styles = StyleSheet.create({
     },
     centrarGrafica: {
         alignItems: 'center'
-    }, 
+    },
     boton: {
         backgroundColor: '#DB2777',
         padding: 10,
